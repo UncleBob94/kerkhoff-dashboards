@@ -1,0 +1,25 @@
+name: Carry Forward Not Met Goals
+
+on:
+  schedule:
+    # Runs every Sunday at 11:00 PM Mountain Time (05:00 UTC Monday)
+    - cron: '0 5 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  carry-forward:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run carry-forward script
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: node carry-forward.js
