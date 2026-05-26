@@ -15,7 +15,7 @@
       --red: #ef4444; --red-dim: #7f1d1d;
       --blue: #3b82f6; --yellow: #f59e0b; --radius: 12px;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     }
     body { background:var(--bg); color:var(--text); font-family:var(--font); min-height:100vh; padding:32px 24px; }
     header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:40px; flex-wrap:wrap; gap:16px; }
@@ -48,6 +48,7 @@
     .donut-container svg { width:90px; height:90px; transform:rotate(-90deg); }
     .donut-bg  { fill:none; stroke:var(--border); stroke-width:8; }
     .donut-met { fill:none; stroke:var(--green); stroke-width:8; stroke-linecap:round; transition:stroke-dasharray 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .donut-not { fill:none; stroke:var(--red);   stroke-width:8; stroke-linecap:round; transition:stroke-dasharray 0.6s cubic-bezier(0.4,0,0.2,1); }
     .donut-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
     .donut-pct { font-family:var(--font); font-size:16px; font-weight:500; line-height:1; display:block; }
     .donut-pct.good    { color:var(--green); }
@@ -224,20 +225,29 @@
         const nextSun   = sundays[i+1];
         const isCurrent = !isFuture && (!nextSun || nextSun > today);
 
-        const met    = weekGoals.filter(g => g.status === 'Met').length;
-        const notMet = weekGoals.filter(g => g.status === 'Not Met').length;
-        const total  = met + notMet;
-        const pct    = total > 0 ? Math.round((met/total)*100) : null;
-        const qualifies = pct !== null && pct >= 80;
+        const met        = weekGoals.filter(g => g.status === 'Met').length;
+        const notMet     = weekGoals.filter(g => g.status === 'Not Met').length;
+        const inProgress = weekGoals.filter(g => g.status === 'In Progress').length;
+
+        // Current week: treat In Progress as red (not yet met)
+        const redCount   = isCurrent ? notMet + inProgress : notMet;
+        const total      = met + redCount;
+        const allGoals   = met + notMet + inProgress;
+        const pct        = total > 0 ? Math.round((met/total)*100) : null;
+        const qualifies  = pct !== null && pct >= 80;
 
         if (qualifies && !isFuture && !isCurrent) qualifyingWeeks++;
 
         const r = 33, circ = 2*Math.PI*r;
-        const fill = pct !== null ? (pct/100)*circ : 0;
+        // Green arc covers met portion; red arc fills remainder
+        const greenFill = pct !== null ? (pct/100)*circ : 0;
+        // For current week with no goals yet: full red circle; otherwise proportional
+        const redFill   = isCurrent && allGoals === 0 ? 0 : (total > 0 ? (redCount/total)*circ : 0);
+        const redOffset = -greenFill; // red starts where green ends
 
         let cardClass = 'empty', badgeHTML = '', pctClass = 'neutral';
 
-        if (isCurrent && total > 0) {
+        if (isCurrent && allGoals > 0) {
           cardClass = 'current';
           badgeHTML = '<div class="week-badge current">Current</div>';
         } else if (total > 0 && !isFuture) {
@@ -262,7 +272,8 @@
             '<div class="donut-container">' +
               '<svg viewBox="0 0 90 90">' +
                 '<circle class="donut-bg"  cx="45" cy="45" r="'+r+'"/>' +
-                '<circle class="donut-met" cx="45" cy="45" r="'+r+'" stroke-dasharray="'+fill+' '+circ+'" stroke-dashoffset="0"/>' +
+                '<circle class="donut-not" cx="45" cy="45" r="'+r+'" stroke-dasharray="'+redFill+' '+circ+'" stroke-dashoffset="'+(-greenFill)+'"/>' +
+                '<circle class="donut-met" cx="45" cy="45" r="'+r+'" stroke-dasharray="'+greenFill+' '+circ+'" stroke-dashoffset="0"/>' +
               '</svg>' +
               '<div class="donut-center">' +
                 '<span class="donut-pct '+pctClass+'">'+(pct !== null ? pct+'%' : '&mdash;')+'</span>' +
@@ -274,8 +285,8 @@
                 '<span class="stat-value" style="color:var(--green)">'+met+'</span>' +
               '</div>' +
               '<div class="stat-row">' +
-                '<span class="stat-label"><span class="stat-dot" style="background:var(--red)"></span>Not Met</span>' +
-                '<span class="stat-value" style="color:var(--red)">'+notMet+'</span>' +
+                '<span class="stat-label"><span class="stat-dot" style="background:var(--red)"></span>'+(isCurrent ? 'Remaining' : 'Not Met')+'</span>' +
+                '<span class="stat-value" style="color:var(--red)">'+redCount+'</span>' +
               '</div>' +
             '</div>' +
           '</div>';
