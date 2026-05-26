@@ -15,7 +15,7 @@
       --red: #ef4444; --red-dim: #7f1d1d;
       --blue: #3b82f6; --yellow: #f59e0b; --radius: 12px;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      
     }
     body { background:var(--bg); color:var(--text); font-family:var(--font); min-height:100vh; padding:32px 24px; }
     header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:40px; flex-wrap:wrap; gap:16px; }
@@ -24,10 +24,10 @@
     .block-selector { display:flex; align-items:center; gap:12px; }
     .block-selector button { background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:8px; width:32px; height:32px; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; transition:background 0.15s; font-family:var(--font); }
     .block-selector button:hover { background:var(--border); }
-    #block-label { font-family:var(--font-mono); font-size:13px; color:var(--text); min-width:200px; text-align:center; }
+    #block-label { font-family:var(--font); font-size:13px; color:var(--text); min-width:200px; text-align:center; }
     .bonus-banner { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px 28px; margin-bottom:32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
     .bonus-label { font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
-    .bonus-score { font-size:36px; font-weight:600; font-family:var(--font-mono); letter-spacing:-0.02em; }
+    .bonus-score { font-size:36px; font-weight:600; font-family:var(--font); letter-spacing:-0.02em; }
     .bonus-score.on-track { color:var(--green); }
     .bonus-score.at-risk  { color:var(--yellow); }
     .bonus-score.off-track { color:var(--red); }
@@ -42,14 +42,14 @@
     .week-card.current    { border-color:#1e3a5f; }
     .week-card.empty      { opacity:0.4; }
     .week-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
-    .week-date  { font-family:var(--font-mono); font-size:13px; color:var(--text); margin-bottom:20px; }
+    .week-date  { font-family:var(--font); font-size:13px; color:var(--text); margin-bottom:20px; }
     .donut-wrapper { display:flex; align-items:center; gap:20px; }
     .donut-container { position:relative; width:90px; height:90px; flex-shrink:0; }
     .donut-container svg { width:90px; height:90px; transform:rotate(-90deg); }
     .donut-bg  { fill:none; stroke:var(--border); stroke-width:8; }
     .donut-met { fill:none; stroke:var(--green); stroke-width:8; stroke-linecap:round; transition:stroke-dasharray 0.6s cubic-bezier(0.4,0,0.2,1); }
     .donut-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
-    .donut-pct { font-family:var(--font-mono); font-size:16px; font-weight:500; line-height:1; display:block; }
+    .donut-pct { font-family:var(--font); font-size:16px; font-weight:500; line-height:1; display:block; }
     .donut-pct.good    { color:var(--green); }
     .donut-pct.bad     { color:var(--red); }
     .donut-pct.neutral { color:var(--muted); }
@@ -57,7 +57,7 @@
     .stat-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; font-size:13px; }
     .stat-dot { width:6px; height:6px; border-radius:50%; margin-right:6px; display:inline-block; flex-shrink:0; }
     .stat-label { display:flex; align-items:center; color:var(--muted); }
-    .stat-value { font-family:var(--font-mono); font-size:13px; font-weight:500; }
+    .stat-value { font-family:var(--font); font-size:13px; font-weight:500; }
     .week-badge { position:absolute; top:16px; right:16px; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; border-radius:4px; }
     .week-badge.qualifying { background:var(--green-dim); color:var(--green); }
     .week-badge.failing    { background:var(--red-dim);   color:var(--red); }
@@ -67,7 +67,7 @@
     @keyframes spin { to { transform:rotate(360deg); } }
     .error-msg { background:var(--red-dim); border:1px solid var(--red); border-radius:var(--radius); padding:16px 20px; font-size:14px; color:#fca5a5; margin-bottom:24px; }
     footer { margin-top:40px; font-size:12px; color:var(--muted); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
-    #last-updated { font-family:var(--font-mono); }
+    #last-updated { font-family:var(--font); }
     .refresh-btn { background:none; border:1px solid var(--border); color:var(--muted); border-radius:6px; padding:4px 12px; font-size:12px; cursor:pointer; font-family:var(--font); transition:all 0.15s; }
     .refresh-btn:hover { border-color:var(--text); color:var(--text); }
   </style>
