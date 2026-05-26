@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kerkhoff — Panel Tracker</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --actual: #f97316;
+      --target: #3b82f6;
+      --border: #242836;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    html, body {
+      height: 100%;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 24px 16px;
+      min-height: 100vh;
+    }
+
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .top-left h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .week-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--font);
+    }
+
+    .scoreboard {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .score-item { text-align: right; }
+
+    .score-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      font-family: var(--font);
+    }
+
+    .score-label.actual { color: var(--actual); }
+    .score-label.target { color: var(--target); }
+
+    .score-value {
+      font-family: var(--font);
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .score-value.actual { color: var(--actual); }
+    .score-value.target { color: var(--target); }
+
+    .chart-wrap {
+      flex: 1;
+      position: relative;
+      min-height: 0;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+      gap: 8px;
+      font-family: var(--font);
+    }
+
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid var(--border);
+      border-top-color: var(--actual);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    footer {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 11px;
+      color: var(--muted);
+      gap: 12px;
+    }
+
+    #last-updated { font-family: var(--font); }
+
+    .refresh-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: all 0.15s;
+    }
+
+    .refresh-btn:hover { border-color: var(--text); color: var(--text); }
+  </style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-left">
+    <h2>Panels Issued for Construction</h2>
+    <div class="week-label" id="week-label">Week — of 52</div>
+  </div>
+  <div class="scoreboard">
+    <div class="score-item">
+      <div class="score-label target">Target</div>
+      <div class="score-value target" id="target-val">—</div>
+    </div>
+    <div class="score-item">
+      <div class="score-label actual">Issued</div>
+      <div class="score-value actual" id="actual-val">—</div>
+    </div>
+  </div>
+</div>
+
+<div class="chart-wrap">
+  <div class="loading" id="loading"><div class="spinner"></div> Loading data...</div>
+  <canvas id="chart" style="display:none"></canvas>
+</div>
+
+<footer>
+  <span id="last-updated">—</span>
+  <button class="refresh-btn" onclick="loadData()">↻</button>
+</footer>
+
+<script>
+  // ─── CONFIG ──────────────────────────────────────────────────────────
+  const NOTION_TOKEN  = 'ntn_S27834872162Jajd6BwwM7BmjUeGhHkNE8qDKmqw7PPdPo';
+  const DATABASE_ID   = '3600a5e8-a4f0-80d6-8e38-000bf1484c84';
+  const PROXY         = 'https://corsproxy.io/?';
+  const ANNUAL_TARGET = 4500;
+  const YEAR          = 2026;
+  // ─────────────────────────────────────────────────────────────────────
+
+  const WEEKS = 52;
+  const PER_WEEK = ANNUAL_TARGET / WEEKS;
+
+  function getWeekOfYear(date) {
+    const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    const dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  }
+
+  function getCurrentWeek() {
+    return Math.min(getWeekOfYear(new Date()), WEEKS);
+  }
+
+  function buildTargetLine() {
+    return Array.from({ length: WEEKS }, (_, i) => Math.round(PER_WEEK * (i + 1)));
+  }
+
+  async function fetchPanels() {
+    if (NOTION_TOKEN === 'YOUR_NOTION_TOKEN_HERE') return null;
+
+    let results = [], cursor;
+    const url = PROXY + 'https://api.notion.com/v1/databases/' + DATABASE_ID + '/query';
+
+    do {
+      const body = {
+        page_size: 100,
+        filter: {
+          and: [
+            { property: 'Status', status: { equals: 'Complete' } },
+            { property: 'IFC Date', date: { on_or_after: YEAR + '-01-01' } },
+            { property: 'IFC Date', date: { on_or_before: YEAR + '-12-31' } }
+          ]
+        }
+      };
+      if (cursor) body.start_cursor = cursor;
+
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + NOTION_TOKEN,
+          'Notion-Version': '2022-06-28',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+
+      if (!res.ok) {
+        const e = await res.json();
+        throw new Error(e.message || 'HTTP ' + res.status);
+      }
+
+      const data = await res.json();
+      results = results.concat(data.results);
+      cursor = data.has_more ? data.next_cursor : undefined;
+    } while (cursor);
+
+    return results;
+  }
+
+  function buildActualLine(pages, currentWeek) {
+    const weeklyTotals = new Array(WEEKS).fill(0);
+
+    pages.forEach(page => {
+      const dateStr = page.properties['IFC Date']?.date?.start;
+      const panels  = page.properties['No. of Panels']?.number || 0;
+      if (!dateStr) return;
+      const week = getWeekOfYear(new Date(dateStr));
+      if (week >= 1 && week <= WEEKS) {
+        weeklyTotals[week - 1] += panels;
+      }
+    });
+
+    let running = 0;
+    return weeklyTotals.map((val, i) => {
+      if (i >= currentWeek) return null;
+      running += val;
+      return running;
+    });
+  }
+
+  function drawChart(targetLine, actualLine, currentWeek) {
+    const canvas = document.getElementById('chart');
+    const ctx    = canvas.getContext('2d');
+    const dpr    = window.devicePixelRatio || 1;
+    const W      = canvas.parentElement.clientWidth;
+    const H      = canvas.parentElement.clientHeight;
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const pad    = { top: 8, right: 16, bottom: 8, left: 8 };
+    const chartW = W - pad.left - pad.right;
+    const chartH = H - pad.top - pad.bottom;
+    const maxVal = ANNUAL_TARGET;
+
+    const xScale = i => pad.left + (i / (WEEKS - 1)) * chartW;
+    const yScale = v => pad.top + chartH - (v / maxVal) * chartH;
+
+    // Current week vertical indicator
+    const cx = xScale(currentWeek - 1);
+    ctx.beginPath();
+    ctx.moveTo(cx, pad.top);
+    ctx.lineTo(cx, pad.top + chartH);
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Target line — dashed blue
+    ctx.beginPath();
+    ctx.setLineDash([6, 4]);
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(59,130,246,0.45)';
+    targetLine.forEach((val, i) => {
+      const x = xScale(i), y = yScale(val);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Actual line
+    const actualPoints = actualLine
+      .map((v, i) => v !== null ? { x: xScale(i), y: yScale(v) } : null)
+      .filter(Boolean);
+
+    if (actualPoints.length > 0) {
+      // Fill gradient
+      const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + chartH);
+      grad.addColorStop(0, 'rgba(249,115,22,0.22)');
+      grad.addColorStop(1, 'rgba(249,115,22,0.01)');
+
+      ctx.beginPath();
+      actualPoints.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.lineTo(actualPoints[actualPoints.length - 1].x, pad.top + chartH);
+      ctx.lineTo(actualPoints[0].x, pad.top + chartH);
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Line
+      ctx.beginPath();
+      actualPoints.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = '#f97316';
+      ctx.lineWidth = 2.5;
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+
+      // End dot
+      const last = actualPoints[actualPoints.length - 1];
+      ctx.beginPath();
+      ctx.arc(last.x, last.y, 7, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(249,115,22,0.2)';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(last.x, last.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#f97316';
+      ctx.fill();
+    }
+  }
+
+  async function loadData() {
+    const loading = document.getElementById('loading');
+    const canvas  = document.getElementById('chart');
+    loading.style.display = 'flex';
+    canvas.style.display  = 'none';
+
+    const currentWeek = getCurrentWeek();
+    const targetLine  = buildTargetLine();
+    const targetNow   = targetLine[currentWeek - 1];
+
+    document.getElementById('week-label').textContent = 'Week ' + currentWeek + ' of ' + WEEKS;
+
+    try {
+      const pages = await fetchPanels();
+      let actualLine, actualNow;
+
+      if (!pages) {
+        actualLine = targetLine.map((v, i) => {
+          if (i >= currentWeek) return null;
+          const noise = Math.sin(i * 0.8) * 80 + Math.sin(i * 0.3) * 40;
+          return Math.max(0, Math.round(v * 0.92 + noise));
+        });
+        actualNow = actualLine[currentWeek - 1];
+      } else {
+        actualLine = buildActualLine(pages, currentWeek);
+        actualNow  = actualLine[currentWeek - 1] || 0;
+      }
+
+      document.getElementById('target-val').textContent = targetNow.toLocaleString();
+      document.getElementById('actual-val').textContent = (actualNow || 0).toLocaleString();
+
+      loading.style.display = 'none';
+      canvas.style.display  = 'block';
+      drawChart(targetLine, actualLine, currentWeek);
+
+      document.getElementById('last-updated').textContent = new Date().toLocaleTimeString();
+
+    } catch(err) {
+      loading.innerHTML = '<span style="color:#ef4444">Failed to load: ' + err.message + '</span>';
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    const canvas = document.getElementById('chart');
+    if (canvas.style.display !== 'none') loadData();
+  });
+
+  loadData();
+</script>
+</body>
+</html>
