@@ -176,7 +176,7 @@
 <script>
   // ─── CONFIG ──────────────────────────────────────────────────────────
   const NOTION_TOKEN  = 'ntn_S27834872162Jajd6BwwM7BmjUeGhHkNE8qDKmqw7PPdPo';
-  const DATABASE_ID   = '3600a5e8-a4f0-80b9-bd21-e3ec01ecc187';
+  const DATABASE_ID   = '3600a5e8-a4f0-80d6-8e38-000bf1484c84';
   const PROXY         = 'https://corsproxy.io/?';
   const ANNUAL_TARGET = 4500;
   const YEAR          = 2026;
@@ -212,7 +212,7 @@
         page_size: 100,
         filter: {
           and: [
-            { property: 'Status', status: { equals: 'Complete' } },
+            { property: 'Issued', checkbox: { equals: true } },
             { property: 'IFC Date', date: { on_or_after: YEAR + '-01-01' } },
             { property: 'IFC Date', date: { on_or_before: YEAR + '-12-31' } }
           ]
