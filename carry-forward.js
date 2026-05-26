@@ -62,7 +62,7 @@ async function fetchNotMetGoals(thisSundayISO) {
       page_size: 100,
       filter: {
         and: [
-          { property: 'Status', status: { equals: 'Not Met' } },
+          { property: 'Status', select: { equals: 'Not Met' } },
           { property: 'Week Of', date: { equals: thisSundayISO } }
         ]
       }
