@@ -223,7 +223,7 @@
         const weekGoals = byWeek[key] || [];
         const isFuture  = sunday > today;
         const nextSun   = sundays[i+1];
-        const isCurrent = !isFuture && (!nextSun || nextSun > today);
+        const isCurrent = !isFuture && sunday <= today && today < new Date(sunday.getTime() + 7 * 86400000);
 
         const met        = weekGoals.filter(g => g.status === 'Met').length;
         const notMet     = weekGoals.filter(g => g.status === 'Not Met').length;
