@@ -1,48 +1,120 @@
 {
-  "generated_at": "2026-08-31T10:25:53.204Z",
+  "generated_at": "2026-08-31T17:49:25.350Z",
   "records": [
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
     },
     {
-      "status": "Met",
-      "weekOf": "2026-08-23"
-    },
-    {
-      "status": "Met",
+      "status": "In Progress",
       "weekOf": "2026-08-23"
     },
     {
       "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-23"
+    },
+    {
+      "status": "Not Met",
       "weekOf": "2026-08-23"
     },
     {
@@ -110,7 +182,7 @@
       "weekOf": "2026-08-23"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-23"
     },
     {
