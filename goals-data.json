@@ -1,8 +1,16 @@
 {
-  "generated_at": "2026-09-04T00:41:30.850Z",
+  "generated_at": "2026-09-04T05:24:50.642Z",
   "records": [
     {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
       "status": "In Progress",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -14,15 +22,7 @@
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -62,7 +62,7 @@
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
