@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-04T21:11:43.028Z",
+  "generated_at": "2026-09-04T23:39:51.095Z",
   "records": [
     {
       "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -14,11 +14,7 @@
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "In Progress",
+      "status": "Not Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -26,11 +22,15 @@
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Not Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -38,11 +38,11 @@
       "weekOf": "2026-08-23"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -54,11 +54,15 @@
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Not Met",
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Not Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
@@ -67,10 +71,6 @@
     },
     {
       "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "In Progress",
       "weekOf": "2026-08-30"
     },
     {
@@ -158,10 +158,6 @@
       "weekOf": "2026-08-23"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-08-30"
-    },
-    {
       "status": "Met",
       "weekOf": "2026-08-23"
     },
@@ -170,11 +166,11 @@
       "weekOf": "2026-08-23"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-08-30"
     },
     {
