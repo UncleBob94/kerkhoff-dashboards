@@ -1,40 +1,84 @@
 {
-  "generated_at": "2026-09-08T03:07:28.972Z",
+  "generated_at": "2026-09-08T08:31:56.622Z",
   "records": [
     {
-      "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Not Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Not Met",
-      "weekOf": "2026-08-30"
-    },
-    {
-      "status": "Met",
-      "weekOf": "2026-08-30"
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
     },
     {
       "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Not Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Not Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-08-30"
+    },
+    {
+      "status": "Not Met",
       "weekOf": "2026-08-23"
     },
     {
