@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T21:21:24.963Z",
+  "generated_at": "2026-09-10T23:39:28.672Z",
   "records": [
     {
       "status": "In Progress",
@@ -18,7 +18,7 @@
       "weekOf": "2026-09-06"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
@@ -82,7 +82,7 @@
       "weekOf": "2026-09-13"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
