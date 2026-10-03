@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T22:49:06.518Z",
+  "generated_at": "2026-10-03T01:41:30.266Z",
   "records": [
     {
       "status": "In Progress",
@@ -87,6 +87,10 @@
     },
     {
       "status": "In Progress",
+      "weekOf": "2026-10-04"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-09-27"
     },
     {
@@ -114,10 +118,6 @@
       "weekOf": "2026-09-27"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-09-27"
-    },
-    {
       "status": "Met",
       "weekOf": "2026-09-27"
     },
@@ -134,7 +134,11 @@
       "weekOf": "2026-09-27"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
+      "weekOf": "2026-09-27"
+    },
+    {
+      "status": "Not Met",
       "weekOf": "2026-09-27"
     },
     {
@@ -218,7 +222,7 @@
       "weekOf": "2026-09-20"
     },
     {
-      "status": "In Progress",
+      "status": "Not Met",
       "weekOf": "2026-09-27"
     },
     {
