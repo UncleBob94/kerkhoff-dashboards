@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:48:57.308Z",
+  "generated_at": "2026-10-24T00:12:53.172Z",
   "records": [
     {
       "status": "In Progress",
@@ -19,7 +19,35 @@
     },
     {
       "status": "In Progress",
-      "weekOf": "2026-09-06"
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
     },
     {
       "status": "In Progress",
@@ -35,6 +63,14 @@
     },
     {
       "status": "In Progress",
+      "weekOf": "2026-09-06"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "In Progress",
       "weekOf": "2026-10-25"
     },
     {
@@ -66,7 +102,7 @@
       "weekOf": "2026-10-18"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-10-18"
     },
     {
