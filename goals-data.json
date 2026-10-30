@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-10-30T02:22:28.911Z",
+  "generated_at": "2026-10-30T09:32:02.451Z",
   "records": [
+    {
+      "status": "In Progress",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-10-25"
+    },
     {
       "status": "In Progress",
       "weekOf": "2026-10-25"
@@ -26,23 +42,7 @@
       "weekOf": "2026-10-25"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-10-25"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-10-25"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-10-25"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-10-25"
-    },
-    {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-10-25"
     },
     {
