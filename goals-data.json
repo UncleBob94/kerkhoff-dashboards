@@ -1,6 +1,10 @@
 {
-  "generated_at": "2026-11-03T07:30:27.967Z",
+  "generated_at": "2026-11-03T15:46:20.761Z",
   "records": [
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-08"
+    },
     {
       "status": "In Progress",
       "weekOf": "2026-11-01"
