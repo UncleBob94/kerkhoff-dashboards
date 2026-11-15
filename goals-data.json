@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:30:03.736Z",
+  "generated_at": "2026-11-15T08:46:13.547Z",
   "records": [
     {
       "status": "In Progress",
@@ -10,6 +10,122 @@
       "weekOf": "2026-11-15"
     },
     {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-15"
+    },
+    {
       "status": "Met",
       "weekOf": "2026-11-08"
     },
@@ -30,7 +146,7 @@
       "weekOf": "2026-11-08"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -43,7 +159,7 @@
     },
     {
       "status": "In Progress",
-      "weekOf": "2026-11-08"
+      "weekOf": "2026-11-15"
     },
     {
       "status": "Met",
@@ -138,7 +254,7 @@
       "weekOf": "2026-11-01"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-01"
     },
     {
@@ -226,10 +342,6 @@
       "weekOf": "2026-10-25"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-10-25"
-    },
-    {
       "status": "Met",
       "weekOf": "2026-10-25"
     },
@@ -238,7 +350,11 @@
       "weekOf": "2026-10-25"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
+      "weekOf": "2026-10-25"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
@@ -246,7 +362,7 @@
       "weekOf": "2026-10-25"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
@@ -322,7 +438,7 @@
       "weekOf": "2026-10-18"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
@@ -342,7 +458,7 @@
       "weekOf": "2026-10-18"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-10-18"
     },
     {
@@ -354,7 +470,7 @@
       "weekOf": "2026-10-25"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-09-06"
     },
     {
@@ -362,7 +478,7 @@
       "weekOf": "2026-10-18"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-10-18"
     },
     {
