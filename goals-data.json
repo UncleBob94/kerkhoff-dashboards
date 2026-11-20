@@ -1,6 +1,14 @@
 {
-  "generated_at": "2026-11-20T17:29:37.331Z",
+  "generated_at": "2026-11-20T23:37:37.033Z",
   "records": [
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-22"
+    },
+    {
+      "status": "In Progress",
+      "weekOf": "2026-11-22"
+    },
     {
       "status": "In Progress",
       "weekOf": "2026-11-22"
@@ -46,7 +54,7 @@
       "weekOf": "2026-11-22"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
