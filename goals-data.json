@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T08:20:14.439Z",
+  "generated_at": "2026-11-20T17:29:37.331Z",
   "records": [
     {
       "status": "In Progress",
@@ -18,35 +18,19 @@
       "weekOf": "2026-11-22"
     },
     {
-      "status": "In Progress",
+      "status": "Not Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -59,30 +43,46 @@
     },
     {
       "status": "In Progress",
-      "weekOf": "2026-11-15"
+      "weekOf": "2026-11-22"
     },
     {
       "status": "In Progress",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Not Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -94,39 +94,27 @@
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
-      "weekOf": "2026-11-15"
-    },
-    {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -135,6 +123,18 @@
     },
     {
       "status": "In Progress",
+      "weekOf": "2026-11-22"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Met",
+      "weekOf": "2026-11-15"
+    },
+    {
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -174,7 +174,7 @@
       "weekOf": "2026-11-08"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -234,7 +234,7 @@
       "weekOf": "2026-11-01"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
@@ -250,7 +250,7 @@
       "weekOf": "2026-11-01"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-15"
     },
     {
