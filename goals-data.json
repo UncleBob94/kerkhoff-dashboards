@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:11:02.982Z",
+  "generated_at": "2026-11-28T00:59:52.667Z",
   "records": [
     {
       "status": "In Progress",
@@ -10,7 +10,7 @@
       "weekOf": "2026-11-22"
     },
     {
-      "status": "Met",
+      "status": "Not Met",
       "weekOf": "2026-11-22"
     },
     {
@@ -42,7 +42,7 @@
       "weekOf": "2026-11-22"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-22"
     },
     {
@@ -90,7 +90,7 @@
       "weekOf": "2026-11-22"
     },
     {
-      "status": "In Progress",
+      "status": "Met",
       "weekOf": "2026-11-22"
     },
     {
